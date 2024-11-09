@@ -509,6 +509,7 @@
         <li class="hideit"><a href="#speciality">Speciality</a></li>
         <li class="hideit"><a href="#gallery">Gallery</a></li>
         <li class="hideit"><a href="/login">Admin</a></li>
+        <li class="hideit"><a href="/depan" style="color:navy;">Main Page</a></li>
         <!-- <li class="hideit"><a href="#team">Team</a></li>
         <li class="hideit"><a href="#contact">Contact Us</a></li> -->
     </ul>
