@@ -2204,7 +2204,7 @@ class Suratjalan extends CI_Controller
     public function kirimtel($isipesan = false, $untuk = false, $tparse = false)
     {
         $tparse = !$tparse?'markdown':'html';
-        $token = "688091201:AAHujjDx9C_mAoMpfAr9T-z9tWrRJLqzdpo";
+        $token = "b0lncG5kWWU2V1ZpU29MR2xWbUFJNmFQSkhjR1lnR0xYaWRWYTkwZUdTZ2xqMHFydVF0d2Q4bmQzaG52dnlNUA==";
         $isipesan = str_replace('%2C', ',', $isipesan);
         $isipesan = str_replace('%20', ' ', $isipesan);
         $chid = $untuk; // -243776253 | 674868958 | -397911439
@@ -2215,7 +2215,7 @@ class Suratjalan extends CI_Controller
 'text' => urldecode($isipesan)
 ];
 
-        file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($datat));
+        file_get_contents("https://api.telegram.org/bot".$this->gudangcrypt->routekey($token,'d')."/sendMessage?" . http_build_query($datat));
     }
 
 
