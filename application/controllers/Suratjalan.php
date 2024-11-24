@@ -1451,6 +1451,11 @@ class Suratjalan extends CI_Controller
         }
     }
 
+    public function go_route($isine){
+      $hsl_key = $this->gudangcrypt->routekey($isine,'e');
+      echo $hsl_key;
+    }
+
 
     public function repjrc()
     {
