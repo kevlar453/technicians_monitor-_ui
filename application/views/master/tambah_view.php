@@ -91,32 +91,46 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Jenis Kelamin</label>
-                                        <br />
-                                        <input type="radio" name="usr_jenkel" value="Laki-Laki" required="required"> Laki-Laki
-                                        <br />
-                                        <input type="radio" name="usr_jenkel" value="Perempuan" required="required"> Perempuan
+                                  <div class="row">
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                          <label>Jenis Kelamin</label>
+                                          <br />
+                                          <input type="radio" name="usr_jenkel" value="Laki-Laki" required="required"> Laki-Laki
+                                          <br />
+                                          <input type="radio" name="usr_jenkel" value="Perempuan" required="required"> Perempuan
+                                      </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Telepon</label>
-                                        <input id="uintTextBox" class="form-control" name="telepon" required="required" placeholder="Contoh : 089618173609" autocomplete="off">
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                          <label>Telepon</label>
+                                          <input id="uintTextBox" class="form-control" name="telepon" required="required" placeholder="Contoh : 089618173609" autocomplete="off">
+                                      </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>E-mail</label>
-                                        <input type="email" class="form-control" name="usr_email" required="required" placeholder="Contoh : cvbdm123@gmail.com" autocomplete="off">
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                          <label>E-mail</label>
+                                          <input type="email" class="form-control" name="usr_email" required="required" placeholder="Contoh : cvbdm123@gmail.com" autocomplete="off">
+                                      </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Foto Diri</label>
-                                        <input type="file" accept="image/*" name="foto" id="foto" onchange="readURL(this);">
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-12">
+                                      <div class="form-group">
+                                          <label>Foto Diri</label>
+                                          <input type="file" accept="image/*" name="foto" id="foto" onchange="readURL(this);">
 
-                                        <br />
-                                        <img src="" style="height:auto;width:210px;" class="img-responsive"  id="pfoto" alt="#">
+                                          <br />
+                                          <img src="" style="height:auto;width:210px;" class="img-responsive"  id="pfoto" alt="#">
+                                      </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Alamat</label>
-                                        <textarea class="form-control" name="usr_alamat" required="required"></textarea>
+                                    <div class="col-sm-12">
+                                      <div class="form-group">
+                                          <label>Alamat</label>
+                                          <textarea class="form-control" name="usr_alamat" required="required"></textarea>
+                                      </div>
                                     </div>
+                                  </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
