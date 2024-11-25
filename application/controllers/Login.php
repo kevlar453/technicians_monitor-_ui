@@ -38,7 +38,7 @@ class Login extends CI_Controller
                     $kode_com .= $hasil_login['clidentitas'][$i];
                 }
             }
-            $cek_usaha = $this->db->query("SELECT * FROM tbl_perusahaan WHERE com_kode='$kode_com'");
+            $cek_usaha = $this->db->query("SELECT * FROM tbl_perusahaan WHERE com_kode='$kode_com'")->row_array();
             $this->session->set_userdata('com_jns', $cek_usaha['com_jenis']);
             $this->session->set_userdata('com_id', $kode_com);
             $this->session->set_userdata('masuk_sistem_rekam', TRUE);
