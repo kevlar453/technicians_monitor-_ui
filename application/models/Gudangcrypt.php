@@ -38,6 +38,7 @@ class GudangCrypt extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_user');
+        $this->db->join('tbl_perusahaan','tbl_perusahaan.com_kode=tbl_user.set_com');
         if (strlen($kyid)==12) {
             $this->db->where('clidentitas', $kyid);
         } else {
