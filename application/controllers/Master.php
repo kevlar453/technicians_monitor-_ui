@@ -47,6 +47,7 @@ class Master extends CI_Controller
 	{
 		$nama = htmlentities($this->input->post('nama', TRUE));
 		$kode = htmlentities($this->input->post('kode', TRUE));
+		$jenis = htmlentities($this->input->post('jenis', TRUE));
 
 		$usr_nama = htmlentities($this->input->post('usr_nama', TRUE));
 		$usr_user = htmlentities($this->input->post('usr_user', TRUE));
@@ -79,6 +80,7 @@ class Master extends CI_Controller
 			$data = array(
 				'com_nama' => $nama,
 				'com_kode' => $kode,
+				'com_jenis' => $jenis,
 				'com_logo' => $convfoto
 			);
 			$this->db->query("SET FOREIGN_KEY_CHECKS = 0");

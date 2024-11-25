@@ -20,18 +20,30 @@
                         <form action="<?php echo base_url('master/add'); ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6">
-                                  <div class="col-sm-6">
+                                  <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Nama Perusahaan</label>
-                                        <input type="text" autofocus class="form-control" name="nama" required="required" placeholder="Nama Pengguna" autocomplete="off">
+                                        <input type="text" autofocus class="form-control" name="nama" required="required" placeholder="Nama Perusahaan" autocomplete="off">
                                     </div>
                                   </div>
-                                  <div class="col-sm-6">
+                                  <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Kode Perusahaan</label>
                                         <input type="text" autofocus class="form-control" name="kode" onkeyup="genkodeid(this.value);" required="required" placeholder="Harus diisi 6 digit" autocomplete="off">
                                     </div>
                                   </div>
+                                  <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Level</label>
+                                        <select name="jenis" id="jenis" class="form-control" required="required">
+                                            <option value="AC">AC Service</option>
+                                            <option value="ATM">ATM Service</option>
+                                            <option value="SRV">Multi Service</option>
+                                        </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
                                   <div class="col-sm-6">
                                     <div class="form-group">
                                       <label>Logo/Lambang Perusahaan</label>
