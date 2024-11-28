@@ -154,9 +154,15 @@ class Suratjalan extends CI_Controller
         }
         $kode_per = $this->session->userdata('com_id');
       }
+      $baseUploadPath = './dapur0/companies/'.$kode_per.'/';
+      $currentDate = date('Y-m-d');
+      $dailyDir = $baseUploadPath . $currentDate;
 
+      if (!is_dir($dailyDir)) {
+          mkdir($dailyDir, 0755, true);
+      }
 
-        $config['upload_path'] = './dapur0/companies/'.$kode_per.'/'; // Directory to save files
+      $config['upload_path'] = $dailyDir;
         $config['allowed_types'] = 'pdf';
         $config['max_size'] = 2048; // 2MB limit
 
@@ -169,23 +175,21 @@ class Suratjalan extends CI_Controller
             );
             echo json_encode($response);
         } else {
-            $uploadData = $this->upload->data();
-            $response = array(
-                'status' => 'success',
-                'file_path' => base_url('dapur0/companies/'.$kode_per.'/' . $uploadData['file_name'])
 
-                $telegramResponse = $this->sendToTelegram($filePath,$key);
+          $uploadData = $this->upload->data();
+          $filePath = $dailyDir . '/' . $uploadData['file_name'];
 
-                $response = array(
-                    'status' => 'success',
-                    'file_path' => base_url('uploads/' . $currentDate . '/' . $uploadData['file_name']),
-                    'telegram_response' => $telegramResponse,
-                    'message' => 'File uploaded and sent to Telegram successfully.'
-                );
+          // Send the file to Telegram
+          $telegramResponse = $this->sendToTelegram($filePath);
 
+          $response = array(
+              'status' => 'success',
+              'file_path' => base_url('dapur0/companies/'.$kode_per.'/' . $currentDate . '/' . $uploadData['file_name']),
+              'telegram_response' => $telegramResponse,
+              'message' => 'File uploaded and sent to Telegram successfully.'
+          );
 
-            );
-            echo json_encode($response);
+          echo json_encode($response);
         }
     }
 
