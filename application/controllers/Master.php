@@ -66,6 +66,17 @@ class Master extends CI_Controller
 			$this->session->set_flashdata('pesan', '<div class="alert alert-warning" role="alert">Gagal Tambah Company : ' . $nama . ' !, Company / Pengelola Sudah Terpakai<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 			redirect(base_url('master'));
 		} else {
+
+			$baseUploadPath = './dapur0/companies/';
+
+			// Get the current date
+			$comDir = $baseUploadPath . $kode;
+
+			// Create the daily directory if it doesn't exist
+			if (!is_dir($comDir)) {
+					mkdir($comDir, 0755, true); // Create directory with permissions
+			}
+
 			// Insert Company
 			$nmfile = "company_" . time();
 			$config['upload_path'] = './assets_style/image/';
