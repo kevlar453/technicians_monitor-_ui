@@ -16,6 +16,13 @@ $logo = ' data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAAA0CAYAAAHOGTekAAAA
       gtag('config', 'G-979FCK021T');
     </script>
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WRKXT3Z4');</script>
+    <!-- End Google Tag Manager -->
 
 <meta property="og:title" content="AR Setontong" />
 <meta property="og:description" content="Our services are designed to empower you and streamline your operations. Discover how we can help you thrive in the digital age." />
@@ -47,3 +54,7 @@ https://www.tooplate.com/view/2126-antique-cafe
 -->
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRKXT3Z4"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
