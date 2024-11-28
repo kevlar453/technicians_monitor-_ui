@@ -180,7 +180,7 @@ class Suratjalan extends CI_Controller
           $filePath = $dailyDir . '/' . $uploadData['file_name'];
 
           // Send the file to Telegram
-          $telegramResponse = $this->sendToTelegram($filePath);
+          $telegramResponse = $this->sendToTelegram($filePath,$key);
 
           $response = array(
               'status' => 'success',
@@ -195,7 +195,7 @@ class Suratjalan extends CI_Controller
 
     private function sendToTelegram($filePath,$key) {
       $token = "b0lncG5kWWU2V1ZpU29MR2xWbUFJNmFQSkhjR1lnR0xYaWRWYTkwZUdTZ2xqMHFydVF0d2Q4bmQzaG52dnlNUA==";
-        $url = "https://api.telegram.org/bot'.$this->gudangcrypt->routekey($token,'d').'/sendDocument";
+        $url = "https://api.telegram.org/bot{$this->gudangcrypt->routekey($token,'d')}/sendDocument";
 
         $postData = array(
             'chat_id' => "674868958",
