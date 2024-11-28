@@ -4,6 +4,19 @@ $logo = ' data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAAA0CAYAAAHOGTekAAAA
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-979FCK021T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-979FCK021T');
+    </script>
+
+
 <meta property="og:title" content="AR Setontong" />
 <meta property="og:description" content="Our services are designed to empower you and streamline your operations. Discover how we can help you thrive in the digital age." />
 <meta property="og:image" content="<?php echo $logo;?>" />
@@ -13,6 +26,10 @@ $logo = ' data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAAA0CAYAAAHOGTekAAAA
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AR Setontong</title>
+
+
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap" rel="stylesheet">

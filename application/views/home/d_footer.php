@@ -3,6 +3,15 @@
     <script src="/assets_style/arsetontong/js/parallax.min.js"></script>
     <script src="/assets_style/arsetontong/js/jquery.singlePageNav.min.js"></script>
     <script>
+      function setLanguage(lang) {
+        // Get all elements with language data attributes
+        const elements = document.querySelectorAll('[data-en][data-id]');
+        elements.forEach(el => {
+          el.textContent = el.getAttribute(`data-${lang}`);
+        });
+      }
+      // Set default language to English
+      setLanguage('en');
 
         function checkAndShowHideMenu() {
             if(window.innerWidth < 768) {

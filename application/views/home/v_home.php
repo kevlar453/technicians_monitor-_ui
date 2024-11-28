@@ -36,16 +36,6 @@
                         <p>
                           Introduction In the fast-paced world of air conditioning and ATM servicing, technicians often juggle multiple jobs, appointments, and unexpected emergencies. Effective job scheduling is crucial for maximizing productivity and ensuring customer satisfaction.
                         </p>
-<!--
-                        <a href="#" class="btn btn-download wow animated fadeInLeft">
-                        <i class="fa fa-android pull-left"></i>
-                        <strong>Get it on</strong>
-                        <br/>Google Play </a>
-                        <a href="#" class="btn btn-download wow animated fadeInRight">
-                        <i class="fa fa-apple pull-left"></i>
-                        <strong>Get it on</strong>
-                        <br/>App store </a>
--->
                     </div>
                 </div>
             </div>
