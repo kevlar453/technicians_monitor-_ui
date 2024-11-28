@@ -144,6 +144,43 @@ class Suratjalan extends CI_Controller
       }
   	}
 
+    public function upload_pdf() {
+
+      $key = $this->input->post('key'); // Retrieve the key
+
+      if ($key !== '') {
+        if(empty($this->session->userdata('com_id'))){
+          $this->gudangcrypt->mobsess($key);
+        }
+        $kode_per = $this->session->userdata('com_id');
+      }
+
+
+        $config['upload_path'] = './dapur0/companies/'.$kode_per.'/'; // Directory to save files
+        $config['allowed_types'] = 'pdf';
+        $config['max_size'] = 2048; // 2MB limit
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('file')) {
+            $response = array(
+                'status' => 'error',
+                'error' => $this->upload->display_errors()
+            );
+            echo json_encode($response);
+        } else {
+            $uploadData = $this->upload->data();
+            $response = array(
+                'status' => 'success',
+                'file_path' => base_url('dapur0/companies/'.$kode_per.'/' . $uploadData['file_name'])
+            );
+            echo json_encode($response);
+        }
+    }
+}
+
+
+
     public function sm_report()
   	{
       $iniden = htmlentities($this->input->post('dtpgn', TRUE));
