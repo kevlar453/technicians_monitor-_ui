@@ -173,11 +173,49 @@ class Suratjalan extends CI_Controller
             $response = array(
                 'status' => 'success',
                 'file_path' => base_url('dapur0/companies/'.$kode_per.'/' . $uploadData['file_name'])
+
+                $telegramResponse = $this->sendToTelegram($filePath,$key);
+
+                $response = array(
+                    'status' => 'success',
+                    'file_path' => base_url('uploads/' . $currentDate . '/' . $uploadData['file_name']),
+                    'telegram_response' => $telegramResponse,
+                    'message' => 'File uploaded and sent to Telegram successfully.'
+                );
+
+
             );
             echo json_encode($response);
         }
     }
 
+    private function sendToTelegram($filePath,$key) {
+      $token = "b0lncG5kWWU2V1ZpU29MR2xWbUFJNmFQSkhjR1lnR0xYaWRWYTkwZUdTZ2xqMHFydVF0d2Q4bmQzaG52dnlNUA==";
+        $url = "https://api.telegram.org/bot{$this->gudangcrypt->routekey($token,'d')}/sendDocument";
+
+        $postData = array(
+            'chat_id' => "674868958",
+            'caption' => $key.' Sukses mengirim laporan',
+            'document' => new CURLFile($filePath) // Attach the file
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            $error = 'Error:' . curl_error($ch);
+            curl_close($ch);
+            return $error;
+        }
+
+        curl_close($ch);
+        return json_decode($response, true);
+    }
 
 
     public function sm_report()
