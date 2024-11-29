@@ -27,7 +27,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <form action="<?php echo base_url('unit/upd'); ?>" method="POST" enctype="multipart/form-data">
+                        <form action="<?php echo base_url('client/upd'); ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <input type="hidden" class="form-control" value="<?= $unit->id_unit; ?>" name="id_unit">
                                 <input type="hidden" name="foto_old" value="<?= $unit->foto; ?>">
