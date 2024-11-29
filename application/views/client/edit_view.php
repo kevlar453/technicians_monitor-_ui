@@ -57,22 +57,6 @@
                                             <?php } ?>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Serial Number</label>
-                                        <input type="text" class="form-control" name="serial" value="<?= $unit->serial; ?>" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Model/Version</label>
-                                        <input type="text" class="form-control" name="model" value="<?= $unit->model; ?>" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Label Number</label>
-                                        <input type="text" class="form-control" name="numlabel" value="<?= $unit->numlabel; ?>" required="required">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Periode</label>
-                                        <input type="text" class="form-control" name="periode" value="<?= $unit->periode; ?>" required="required">
-                                    </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
