@@ -120,7 +120,7 @@ class User extends CI_Controller
 
 	public function edit()
 	{
-		if ($this->session->userdata('level') == 'administrator' || $this->session->userdata('level') == 'master') {
+		if ($this->session->userdata('level') == 'administrator' || $this->session->userdata('level') == 'master' || $this->session->userdata('level') == 'manajemen') {
 			if ($this->uri->segment('3') == '') {
 				echo '<script>alert("halaman tidak ditemukan");window.location="' . base_url('user') . '";</script>';
 			}
