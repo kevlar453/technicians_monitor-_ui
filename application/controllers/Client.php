@@ -266,7 +266,7 @@ class Client extends CI_Controller
 		}
 		$this->M_Admin->update_table('tbl_client', 'id_unit', $id, $data);
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Berhasil Update Unit : ' . $nama . ' !<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-		redirect(base_url('unit'));
+		redirect(base_url('client'));
 	}
 
 	public function del()
