@@ -241,10 +241,10 @@ class Suratjalan extends CI_Controller
         $this->email->initialize($config);
 
         // Email content
-        $this->email->from('your_email@example.com', 'Your Name');
-        $this->email->to('recipient@example.com'); // Recipient's email
-        $this->email->subject('Contact Form Submission');
-        $this->email->message('This is a test email from the contact page.');
+        $this->email->from($this->input->post('email'), $this->input->post('name'));
+        $this->email->to('ymakarius@gmail.com'); // Recipient's email
+        $this->email->subject('Visitor AR Setontong');
+        $this->email->message($this->input->post('message'));
 
         // Send email
         if ($this->email->send()) {
