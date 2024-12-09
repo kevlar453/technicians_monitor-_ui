@@ -249,6 +249,7 @@ class Suratjalan extends CI_Controller
         // Send email
         if ($this->email->send()) {
             echo 'Email sent successfully!';
+            redirect('/');
         } else {
             show_error($this->email->print_debugger());
         }
