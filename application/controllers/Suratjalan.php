@@ -221,7 +221,38 @@ class Suratjalan extends CI_Controller
         return json_decode($response, true);
     }
 
+    public function send_email() {
+        // Load email library
+        $this->load->library('email');
 
+        // SMTP configuration
+        $config = array(
+            'protocol'  => 'smtp',
+            'smtp_host' => 'mail.arsetontong.top', // e.g., smtp.gmail.com
+            'smtp_port' => 587, // or 465 for SSL
+            'smtp_user' => 'arsetontong', // Your email address
+            'smtp_pass' => '*Histalumir$$65216*', // Your email password
+            'mailtype'  => 'html', // or 'text'
+            'charset'   => 'utf-8',
+            'newline'   => "\r\n",
+            'smtp_crypto' => 'tls' // or 'ssl'
+        );
+
+        $this->email->initialize($config);
+
+        // Email content
+        $this->email->from('your_email@example.com', 'Your Name');
+        $this->email->to('recipient@example.com'); // Recipient's email
+        $this->email->subject('Contact Form Submission');
+        $this->email->message('This is a test email from the contact page.');
+
+        // Send email
+        if ($this->email->send()) {
+            echo 'Email sent successfully!';
+        } else {
+            show_error($this->email->print_debugger());
+        }
+    }
     public function sm_report()
   	{
       $iniden = htmlentities($this->input->post('dtpgn', TRUE));
