@@ -122,12 +122,15 @@
 -->
             </div>
             <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container">
-                <form action="<?php echo site_url('suratjalan/send_email'); ?>" method="POST" class="text-lg">
+                <form action="<?php echo site_url('suratjalan/send_email'); ?>" method="POST" class="text-lg" id="hubung">
                     <input type="text" name="name" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Name" required="" />
                     <input type="email" name="email" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Email" required="" />
                     <textarea rows="6" name="message" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Message..." required=""></textarea>
                     <div class="text-right">
-                        <button type="submit" class="text-white hover:text-yellow-500 transition">Send it</button>
+                      <button type="submit" class="text-white hover:text-yellow-500 transition g-recaptcha"
+  data-sitekey="6Le8TJ0qAAAAAIhDdQJKzAsThYwKCBGBDONXbst4"
+  data-callback='onSubmit'
+  data-action='submit'>Send it</button>
                     </div>
                   </form>
             </div>
