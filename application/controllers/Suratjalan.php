@@ -335,7 +335,7 @@ class Suratjalan extends CI_Controller
         </html>'
 
         // Email content
-        $this->email->from($this->input->post('email'), $this->input->post('name'));
+        $this->email->from('arsetontong@arsetontong.top', $this->input->post('name'));
         $this->email->to('ymakarius@gmail.com'); // Recipient's email
         $this->email->subject('Visitor AR Setontong');
         $this->email->message($isimsg);
